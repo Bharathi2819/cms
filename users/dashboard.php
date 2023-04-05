@@ -10,126 +10,545 @@ if ($_SESSION['role'] != 'user') {
 }
 ?>
 <body>
-    <div>
-        <div class="flex flex-col flex-auto flex-shrink-0 min-h-screen antialiased text-black bg-zinc-100 ">
-            <div class="relative flex flex-col justify-center w-full h-full overflow-hidden antialiased text-gray-800 sm:py-12 ml-20 ">
-                <section class="text-white ">
-                    <div class="max-w-screen-xl px-10 mx-auto sm:py-10 sm:px-6 lg:px-8">
-                        <div class="max-w-lg mx-auto text-center">
-                            <h2 class="text-2xl font-bold sm:text-3xl text-amber-400 uppercase " >Complaint Numbers</h2>
-                        </div>
-                        <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 ">
-                            <a class="group block rounded-lg p-8 bg-gray-800 ring-1 ring-gary-800 shadow-lg space-y-3 hover:bg-amber-500 hover:ring-amber-800">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg> -->
-                                <?php
-                                    //$date = date_default_timezone_set("Asia/Kolkata");
-                                    //echo "The time is " . date("h:i:sa");
-                                ?>
-                                <?php
-                                    $rt = mysqli_query($conn,"SELECT * FROM tblcomplaints where userId='".$_SESSION['id']."' and status is null");
-                                    $num1 = mysqli_num_rows($rt);
-                                    {?>
-                                    <div class="mt-4 text-4xl font-bold text-white-900 group-hover:text-black flex justify-center">
-                                        <?php echo htmlentities($num1);?>
+<div class="flex flex-col flex-auto flex-shrink-0 min-h-screen antialiasedtext-white bg-gray-100">
+            <div class="h-fixed  bg-gray-100 ml-14 md:ml-64">
+                <div class="overflow-x-auto">
+                    <div class="flex items-center justify-center overflow-hidden font-sans bg-gray-100 ">
+                        <div class="w-full lg:w-6/6">
+           <main class="">
+                <div class="grid mb-4 pb-10 px-8 mx-4 rounded-3xl bg-gray-100 border-4 border-gray-100">
+                    <div class="grid grid-cols-12 gap-6">
+                        <div class="grid grid-cols-12 col-span-12 gap-6 xxl:col-span-9">
+                            <div class="col-span-12 mt-8">
+                                <div class="flex items-center h-10 intro-y">
+                                    <h2 class="mr-5 text-lg font-medium truncate"></h2>
+                                </div>
+                                <div class="grid grid-cols-12 gap-6 mt-5">
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-blue-800 text-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex gap-6 ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-amber-400"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                                </svg>
+                                                <div
+                                                    class="h-6 flex justify-items-start text-white font-semibold text-base uppercase">
+                                                    <span class="flex ">All Requirements</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-6 ">
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+                                                        <div>
+                                                            <div>
+                                                            <?php
+                                                                $rt =mysqli_query($conn,"SELECT 
+                                                                requirements.*, 
+                                                                users.fullName AS name
+                                                            FROM 
+                                                                requirements 
+                                                                JOIN users ON users.id = requirements.userId
+                                                            WHERE 
+                                                                requirements.status IS NULL 
+                                                                ");;
+                                                                $num1 = mysqli_num_rows($rt);
+                                                                {?>
+                                                                <div class="mt-4 text-4xl font-bold  text-black group-hover:text-black flex ml-12">
+                                                                    <?php echo htmlentities($num1);?>
+                                                                </div>
+                                                            <?php }?>
+                                                                <div class="mt-1 ml-8 text-base font-bold text-black">Material</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+                                                        <div>
+                                                            <div>
+                                                            <?php
+                                                                $rt =mysqli_query($conn,"SELECT 
+                                                                fund.*, 
+                                                                users.fullName AS name
+                                                            FROM 
+                                                                fund 
+                                                                JOIN users ON users.id = fund.userId
+                                                            WHERE 
+                                                                fund.status IS NULL 
+                                                                ");;
+                                                                $num1 = mysqli_num_rows($rt);
+                                                                {?>
+                                                                <div class="mt-4 text-4xl font-bold  text-black group-hover:text-black flex ml-12">
+                                                                    <?php echo htmlentities($num1);?>
+                                                                </div>
+                                                            <?php }?>
+                                                                <div class="mt-1 ml-10 text-base font-bold text-black">Fund</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-green-500 text-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex gap-6 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="amber" d="M12.925 11.05L8.675 6.8L10.1 5.4l2.825 2.825l5.675-5.65l1.4 1.4l-7.075 7.075ZM14 22.5l-7-1.95V11h1.95l6.2 2.3q.825.3 1.337 1.05T17 16h-2q-1.05 0-1.65-.075T12.3 15.7l-2-.65l-.3.95l1.575.575q.7.275 1.275.35T14.2 17H19q1.65 0 2.325.537T22 19v1l-8 2.5ZM1 22V11h4v11H1Z"/></svg>
+                                                <div
+                                                    class="h-6 flex justify-items-starttext-white font-semibold text-base uppercase">
+                                                    <span class="flex ">Approved Requirements</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-6 ">
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300"">
+                                                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+                                                        <div>
+                                                            <div>
+                                                            <?php
+                                                                $rt =mysqli_query($conn,"SELECT 
+                                                                requirements.*, 
+                                                                users.fullName AS name
+                                                            FROM 
+                                                                requirements 
+                                                                JOIN users ON users.id = requirements.userId
+                                                            WHERE 
+                                                                requirements.status='Approved' 
+                                                                ");;
+                                                                $num1 = mysqli_num_rows($rt);
+                                                                {?>
+                                                                <div class="mt-4 text-4xl font-bold  text-black group-hover:text-black flex ml-12">
+                                                                    <?php echo htmlentities($num1);?>
+                                                                </div>
+                                                            <?php }?>
+                                                                <div class="mt-1 ml-8 text-base font-bold text-black">Material</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+                                                        <div>
+                                                            <div>
+                                                            <?php
+                                                                $rt =mysqli_query($conn,"SELECT 
+                                                                fund.*, 
+                                                                users.fullName AS name
+                                                            FROM 
+                                                                fund 
+                                                                JOIN users ON users.id = fund.userId
+                                                            WHERE 
+                                                                fund.status='Approved'
+                                                                ");;
+                                                                $num1 = mysqli_num_rows($rt);
+                                                                {?>
+                                                                <div class="mt-4 text-4xl font-bold  text-black group-hover:text-black flex ml-12">
+                                                                    <?php echo htmlentities($num1);?>
+                                                                </div>
+                                                            <?php }?>
+                                                                <div class="mt-1 ml-10 text-base font-bold text-black">Fund</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-amber-300 text-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex gap-6 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="amber" d="M16 12c2.76 0 5-2.24 5-5s-2.24-5-5-5s-5 2.24-5 5s2.24 5 5 5m5.45 5.6c-.39-.4-.88-.6-1.45-.6h-7l-2.08-.73l.33-.94L13 16h2.8c.35 0 .63-.14.86-.37s.34-.51.34-.82c0-.54-.26-.91-.78-1.12L8.95 11H7v9l7 2l8.03-3c.01-.53-.19-1-.58-1.4M5 11H.984v11H5V11Z"/></svg>
+                                                <div
+                                                    class="h-6 flex justify-items-starttext-white font-semibold text-base uppercase">
+                                                    <span class="flex ">Hold Requirements</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-6 ">
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300"">
+                                                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+                                                        <div>
+                                                            <div>
+                                                            <?php
+                                                                $rt =mysqli_query($conn,"SELECT 
+                                                                requirements.*, 
+                                                                users.fullName AS name
+                                                            FROM 
+                                                                requirements 
+                                                                JOIN users ON users.id = requirements.userId
+                                                            WHERE 
+                                                                requirements.status ='Hold'
+                                                                ");;
+                                                                $num1 = mysqli_num_rows($rt);
+                                                                {?>
+                                                                <div class="mt-4 text-4xl font-bold  text-black group-hover:text-black flex ml-12">
+                                                                    <?php echo htmlentities($num1);?>
+                                                                </div>
+                                                            <?php }?>
+                                                                <div class="mt-1 ml-8 text-base font-bold text-black">Material</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+                                                        <div>
+                                                            <div>
+                                                            <?php
+                                                                $rt =mysqli_query($conn,"SELECT 
+                                                                fund.*, 
+                                                                users.fullName AS name
+                                                            FROM 
+                                                                fund 
+                                                                JOIN users ON users.id = fund.userId
+                                                            WHERE 
+                                                                fund.status='Hold'
+                                                                ");;
+                                                                $num1 = mysqli_num_rows($rt);
+                                                                {?>
+                                                                <div class="mt-4 text-4xl font-bold  text-black group-hover:text-black flex ml-12">
+                                                                    <?php echo htmlentities($num1);?>
+                                                                </div>
+                                                            <?php }?>
+                                                                <div class="mt-1 ml-10 text-base font-bold text-black">Fund</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-red-500 text-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex gap-6 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="amber" d="M22.11 21.46L2.39 1.73L1.11 3l2.45 2.45C3.21 5.87 3 6.41 3 7v9c0 4.42 3.58 8 8 8c2.94 0 5.62-1.55 7.12-4l2.72 2.73l1.27-1.27M11 22c-3.31 0-6-2.69-6-6V6.91l1 .98V12h2V9.89l1 1V12h1.11l6.54 6.54A6.353 6.353 0 0 1 11 22M8 4.8L6.21 3c.38-.88 1.26-1.5 2.29-1.5c.23 0 .46.03.67.09C9.54.66 10.44 0 11.5 0c1.23 0 2.25.89 2.46 2.06c.17-.06.35-.06.54-.06A2.5 2.5 0 0 1 17 4.5v5.89c.34-.31.76-.54 1.22-.66L19 9.5c.82-.21 1.69.11 2.18.85c.38.57.4 1.31.15 1.95l-1.66 4.17l-1.54-1.54l1.37-3.48l-.5.14c-.5.12-.85.46-1 .91l-.66 1.64L15 11.8V4.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v6.3l-2-2V2.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v5.3l-2-2V4c0-.28-.22-.5-.5-.5S8 3.72 8 4v.8Z"/></svg>    <div
+                                                    class="h-6 flex justify-items-starttext-white font-semibold text-base uppercase">
+                                                    <span class="flex ">Rejected Requirements</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-6 ">
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300"">
+                                                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+                                                        <div>
+                                                            <div>
+                                                            <?php
+                                                                $rt =mysqli_query($conn,"SELECT 
+                                                                requirements.*, 
+                                                                users.fullName AS name
+                                                            FROM 
+                                                                requirements 
+                                                                JOIN users ON users.id = requirements.userId
+                                                            WHERE 
+                                                                requirements.status ='Rejected'
+                                                                ");;
+                                                                $num1 = mysqli_num_rows($rt);
+                                                                {?>
+                                                                <div class="mt-4 text-4xl font-bold  text-black group-hover:text-black flex ml-12">
+                                                                    <?php echo htmlentities($num1);?>
+                                                                </div>
+                                                            <?php }?>
+                                                                <div class="mt-1 ml-8 text-base font-bold text-black">Material</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+                                                        <div>
+                                                            <div>
+                                                            <?php
+                                                                $rt =mysqli_query($conn,"SELECT 
+                                                                fund.*, 
+                                                                users.fullName AS name
+                                                            FROM 
+                                                                fund 
+                                                                JOIN users ON users.id = fund.userId
+                                                            WHERE 
+                                                                fund.status='Rejected'
+                                                                ");;
+                                                                $num1 = mysqli_num_rows($rt);
+                                                                {?>
+                                                                <div class="mt-4 text-4xl font-bold  text-black group-hover:text-black flex ml-12">
+                                                                    <?php echo htmlentities($num1);?>
+                                                                </div>
+                                                            <?php }?>
+                                                                <div class="mt-1 ml-10 text-base font-bold text-black">Fund</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-blue-800 text-white" href="#">
+                                <div class="p-5">
+                                    <div class="flex gap-6 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="amber" d="M22.11 21.46L2.39 1.73L1.11 3l2.45 2.45C3.21 5.87 3 6.41 3 7v9c0 4.42 3.58 8 8 8c2.94 0 5.62-1.55 7.12-4l2.72 2.73l1.27-1.27M11 22c-3.31 0-6-2.69-6-6V6.91l1 .98V12h2V9.89l1 1V12h1.11l6.54 6.54A6.353 6.353 0 0 1 11 22M8 4.8L6.21 3c.38-.88 1.26-1.5 2.29-1.5c.23 0 .46.03.67.09C9.54.66 10.44 0 11.5 0c1.23 0 2.25.89 2.46 2.06c.17-.06.35-.06.54-.06A2.5 2.5 0 0 1 17 4.5v5.89c.34-.31.76-.54 1.22-.66L19 9.5c.82-.21 1.69.11 2.18.85c.38.57.4 1.31.15 1.95l-1.66 4.17l-1.54-1.54l1.37-3.48l-.5.14c-.5.12-.85.46-1 .91l-.66 1.64L15 11.8V4.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v6.3l-2-2V2.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v5.3l-2-2V4c0-.28-.22-.5-.5-.5S8 3.72 8 4v.8Z"/></svg>    
+                                        <div class="h-6 flex justify-items-starttext-white font-semibold text-base uppercase">
+                                            <span class="flex ">All Complaints</span>
+                                        </div>
                                     </div>
-                                <?php }?>
-                                <h2 class="ml-5 mt-4 text-xl font-bold text-white-900 group-hover:text-black ">Complaints not process yet</h2>
-                            </a>
-                            <a  class="group block rounded-lg p-8 bg-gray-800 ring-1 ring-gary-800 shadow-lg space-y-3 hover:bg-amber-500 hover:ring-amber-800">
-                                    <div class="flex items-center space-x-3"></div>
-                                <?php
-                                    $status="in Process";
-                                    $rt = mysqli_query($conn,"SELECT * FROM tblcomplaints where userId='".$_SESSION['id']."' and  status='$status'");
-                                    $num1 = mysqli_num_rows($rt);
-                                    {?>
-                                    <div class="mt-4 text-4xl font-bold text-white-900 group-hover:text-black flex justify-center">
-                                        <?php echo htmlentities($num1);?>
+                                    <div class="flex justify-center items-center ml-14 mr-14 mt-5  p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                            <?php
+                                                $rt = mysqli_query($conn,"SELECT * FROM tblcomplaints where userId='".$_SESSION['id']."'");
+                                                $num1 = mysqli_num_rows($rt);
+                                            ?>
+                                            <div class="mt-4 text-4xl font-bold text-black group-hover:text-black">
+                                                <?php echo htmlentities($num1);?>
+                                            </div>
                                     </div>
-                                <?php }?>
-                                <h3 class="ml-5 mt-4 text-xl font-bold text-white-900 group-hover:text-black ">Complaints status in process</h3>
+                                </div>
                             </a>
-                            <a class="group block rounded-lg p-8 bg-gray-800 ring-1 ring-gary-800 shadow-lg space-y-3 hover:bg-amber-500 hover:ring-amber-800">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                               </svg> -->
-                                <?php
-                                    $status="closed";
-                                    $rt = mysqli_query($conn,"SELECT * FROM tblcomplaints where userId='".$_SESSION['id']."' and  status='$status'");
-                                    $num1 = mysqli_num_rows($rt);
-                                    {?>
-                                    <div class="mt-4 text-4xl font-bold text-white-900 group-hover:text-black flex justify-center">
-                                        <?php echo htmlentities($num1);?>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-red-500 text-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex gap-6 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="amber" d="M22.11 21.46L2.39 1.73L1.11 3l2.45 2.45C3.21 5.87 3 6.41 3 7v9c0 4.42 3.58 8 8 8c2.94 0 5.62-1.55 7.12-4l2.72 2.73l1.27-1.27M11 22c-3.31 0-6-2.69-6-6V6.91l1 .98V12h2V9.89l1 1V12h1.11l6.54 6.54A6.353 6.353 0 0 1 11 22M8 4.8L6.21 3c.38-.88 1.26-1.5 2.29-1.5c.23 0 .46.03.67.09C9.54.66 10.44 0 11.5 0c1.23 0 2.25.89 2.46 2.06c.17-.06.35-.06.54-.06A2.5 2.5 0 0 1 17 4.5v5.89c.34-.31.76-.54 1.22-.66L19 9.5c.82-.21 1.69.11 2.18.85c.38.57.4 1.31.15 1.95l-1.66 4.17l-1.54-1.54l1.37-3.48l-.5.14c-.5.12-.85.46-1 .91l-.66 1.64L15 11.8V4.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v6.3l-2-2V2.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v5.3l-2-2V4c0-.28-.22-.5-.5-.5S8 3.72 8 4v.8Z"/></svg>    <div
+                                                    class="h-6 flex justify-items-starttext-white font-semibold text-base uppercase">
+                                                    <span class="flex ">Not Process Complaints</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-center items-center ml-14 mr-14 mt-5  p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                            <?php
+                                                 $rt = mysqli_query($conn,"SELECT * FROM tblcomplaints where userId='".$_SESSION['id']."' and status is null");
+                                                 $num1 = mysqli_num_rows($rt);
+                                            ?>
+                                            <div class="mt-4 text-4xl font-bold text-black group-hover:text-black">
+                                                <?php echo htmlentities($num1);?>
+                                            </div>
                                     </div>
-                                <?php }?>
-                                <h2 class="ml-5 mt-4 text-xl font-bold text-white-900 group-hover:text-black ">Complaint has been closed</h2>
-                            </a>
-                        </div>
-                        <div class="max-w-lg mx-auto mt-8 text-center">
-                            <h2 class="text-2xl font-bold sm:text-3xl text-amber-400 uppercase">Requirement Numbers</h2>
-                        </div>
-                        <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
-                            <a class="group block rounded-lg p-8 bg-gray-800 ring-1 ring-gary-800 shadow-lg space-y-3 hover:bg-amber-500 hover:ring-amber-800">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg> -->
-                                <?php
-                                    $rt = mysqli_query($conn,"SELECT * FROM requirements where userId='".$_SESSION['id']."' and status is null");
-                                    $num1 = mysqli_num_rows($rt);
-                                    {?>
-                                    <div class="mt-4 text-4xl font-bold text-white-900 group-hover:text-black flex justify-center">
-                                        <?php echo htmlentities($num1);?>
+                                        </div>
+                                    </a>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-amber-300 text-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex gap-6 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="amber" d="M22.11 21.46L2.39 1.73L1.11 3l2.45 2.45C3.21 5.87 3 6.41 3 7v9c0 4.42 3.58 8 8 8c2.94 0 5.62-1.55 7.12-4l2.72 2.73l1.27-1.27M11 22c-3.31 0-6-2.69-6-6V6.91l1 .98V12h2V9.89l1 1V12h1.11l6.54 6.54A6.353 6.353 0 0 1 11 22M8 4.8L6.21 3c.38-.88 1.26-1.5 2.29-1.5c.23 0 .46.03.67.09C9.54.66 10.44 0 11.5 0c1.23 0 2.25.89 2.46 2.06c.17-.06.35-.06.54-.06A2.5 2.5 0 0 1 17 4.5v5.89c.34-.31.76-.54 1.22-.66L19 9.5c.82-.21 1.69.11 2.18.85c.38.57.4 1.31.15 1.95l-1.66 4.17l-1.54-1.54l1.37-3.48l-.5.14c-.5.12-.85.46-1 .91l-.66 1.64L15 11.8V4.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v6.3l-2-2V2.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v5.3l-2-2V4c0-.28-.22-.5-.5-.5S8 3.72 8 4v.8Z"/></svg>    <div
+                                                    class="h-6 flex justify-items-starttext-white font-semibold text-base uppercase">
+                                                    <span class="flex ">In Process Complaints</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-center items-center ml-14 mr-14 mt-5  p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                            <?php
+                                                $status="in process";
+                                                 $rt = mysqli_query($conn,"SELECT * FROM tblcomplaints where userId='".$_SESSION['id']."' and status='$status'");
+                                                 $num1 = mysqli_num_rows($rt);
+                                            ?>
+                                            <div class="mt-4 text-4xl font-bold text-black group-hover:text-black">
+                                                <?php echo htmlentities($num1);?>
+                                            </div>
                                     </div>
-                                <?php }?>
-                                    <h2 class="ml-5 mt-4 text-xl font-bold text-white-900 group-hover:text-black ">Requirement not process yet</h2>
-                            </a>
-                            <a class="group block rounded-lg p-8 bg-gray-800 ring-1 ring-gary-800 shadow-lg space-y-3 hover:bg-amber-500 hover:ring-amber-800">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg> -->
-                                <?php
-                                    $status="in Process";
-                                    $rt = mysqli_query($conn,"SELECT * FROM requirements where userId='".$_SESSION['id']."' and  status='$status'");
-                                    $num1 = mysqli_num_rows($rt);
-                                    {?>
-                                    <div class="mt-4 text-4xl font-bold text-white-900 group-hover:text-black flex justify-center">
-                                        <?php echo htmlentities($num1);?>
+                                        </div>
+                                    </a>
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-green-500 text-white"
+                                        href="#">
+                                        <div class="p-5">
+                                            <div class="flex gap-6 ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="amber" d="M22.11 21.46L2.39 1.73L1.11 3l2.45 2.45C3.21 5.87 3 6.41 3 7v9c0 4.42 3.58 8 8 8c2.94 0 5.62-1.55 7.12-4l2.72 2.73l1.27-1.27M11 22c-3.31 0-6-2.69-6-6V6.91l1 .98V12h2V9.89l1 1V12h1.11l6.54 6.54A6.353 6.353 0 0 1 11 22M8 4.8L6.21 3c.38-.88 1.26-1.5 2.29-1.5c.23 0 .46.03.67.09C9.54.66 10.44 0 11.5 0c1.23 0 2.25.89 2.46 2.06c.17-.06.35-.06.54-.06A2.5 2.5 0 0 1 17 4.5v5.89c.34-.31.76-.54 1.22-.66L19 9.5c.82-.21 1.69.11 2.18.85c.38.57.4 1.31.15 1.95l-1.66 4.17l-1.54-1.54l1.37-3.48l-.5.14c-.5.12-.85.46-1 .91l-.66 1.64L15 11.8V4.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v6.3l-2-2V2.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v5.3l-2-2V4c0-.28-.22-.5-.5-.5S8 3.72 8 4v.8Z"/></svg>    <div
+                                                    class="h-6 flex justify-items-starttext-white font-semibold text-base uppercase">
+                                                    <span class="flex ">Closed Complaints</span>
+                                                </div>
+                                            </div>
+                                                <div class="flex justify-center items-center ml-14 mr-14 mt-5  p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
+                                                        <div>
+                                                            <?php
+                                                                    $status="closed";
+                                                                    $rt = mysqli_query($conn,"SELECT * FROM tblcomplaints where userId='".$_SESSION['id']."' and  status='$status'");
+                                                                    $num1 = mysqli_num_rows($rt);
+                                                                    {?>
+                                                                    <div class="mt-4 text-4xl font-bold text-black group-hover:text-black">
+                                                                        <?php echo htmlentities($num1);?>
+                                                                    </div>
+                                                                <?php } ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                            <div class="col-span-12 mt-5">
+                                <div class="grid gap-2 grid-cols-1 lg:grid-cols-2">
+                                    <div class="bg-white rounded-lg border-2 border-gray-2
+                                    00 shadow-lg p-4" id="chartline"></div>
+                                    <div class="grid gap-2 grid-cols-1 lg:grid-cols-2">
+                                    <div class="text-white border-2 border-amber-200 rounded-lg bg-gradient-to-r from-amber-100 via-amber-200 to-amber-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-amber-200 dark:focus:ring-amber-300" id="chartpie">
+                                    <div class="mt-7 flex justify-center text-black font-semibold text-base uppercase mb-8">Material</div>   
                                     </div>
-                                <?php }?>
-                                <h2 class="ml-5 mt-4 text-xl font-bold text-white-900 group-hover:text-black ">Requirement status in process</h2>
-                            </a>
-                            <a class="group block rounded-lg p-8 bg-gray-800 ring-1 ring-gary-800 shadow-lg space-y-3 hover:bg-amber-500 hover:ring-amber-800">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
-                                </svg> -->
-                                <?php
-                                    $status="closed";
-                                    $rt = mysqli_query($conn,"SELECT * FROM requirements where userId='".$_SESSION['id']."' and  status='$status'");
-                                    $num1 = mysqli_num_rows($rt);
-                                    {?>
-                                    <div class="mt-4 text-4xl font-bold text-white-900 group-hover:text-black flex justify-center">
-                                        <?php echo htmlentities($num1);?>
-                                    </div>
-                                <?php }?>
-                                <h2 class="ml-5 mt-4 text-xl font-bold text-white-900 group-hover:text-black ">Requirement has been closed</h2>
-                            </a>
+                                    <div class="text-white border-2 border-amber-200 rounded-lg bg-gradient-to-r from-amber-100 via-amber-200 to-amber-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-amber-200 dark:focus:ring-amber-300" id="chartpie1">
+                                    <div class="mt-7 flex justify-center text-black font-semibold text-base uppercase mb-8">Fund</div>  
+                                    </div></div>
+                                </div>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </main>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <?php
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_new FROM tblcomplaints where userId='".$_SESSION['id']."'");
+    $result = mysqli_fetch_assoc($rt);
+    $num_new = $result['num_new'];
+
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Approve FROM tblcomplaints where userId='".$_SESSION['id']."' and tblcomplaints.status IS NULL ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Approve = $result['num_Approve'];
+
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Hold FROM tblcomplaints where userId='".$_SESSION['id']."' and tblcomplaints.status='in process' ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Hold = $result['num_Hold'];
+
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Rejected FROM tblcomplaints where userId='".$_SESSION['id']."' and tblcomplaints.status='closed' ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Rejected = $result['num_Rejected'];
+?>
+
+<script>
+    var options = {
+    series: [{
+        name:'Total',
+        colors: ['#007bff', '#00E396', '#FFA500', '#EF4444'],
+        data: [<?php echo $num_new ?>, <?php echo $num_Approve ?>, <?php echo $num_Hold ?>, <?php echo $num_Rejected ?>]
+    }],
+    chart: {
+        type: 'bar',
+        height: 350
+    },
+    plotOptions: {
+        bar: {
+            borderRadius: 4,
+            horizontal: true,
+        }
+    },
+    dataLabels: {
+        enabled: false
+    },
+    xaxis: {
+        categories: ['All', 'Not yet process', 'In process', 'closed'],
+    },
+    yaxis: {
+        max: 100,
+    },
+    tooltip: {
+        enabled: true,
+        y: {
+            formatter: function (val) { return number(val); }
+        }
+    }
+};
+var chart = new ApexCharts(document.querySelector("#chartline"), options);
+chart.render();
+function number(val) {
+    return val + " complaints";
+}
+</script>
+
+<?php
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_new FROM fund JOIN users ON users.id = fund.userId WHERE fund.status IS NULL ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_new = $result['num_new'];
+?>
+<?php
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Approve FROM fund JOIN users ON users.id = fund.userId WHERE fund.status='Approved' ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Approve = $result['num_Approve'];
+?>
+<?php
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Hold FROM fund JOIN users ON users.id = fund.userId WHERE fund.status='Hold' ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Hold = $result['num_Hold'];
+?>
+<?php
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Rejected FROM fund JOIN users ON users.id = fund.userId WHERE fund.status='Rejected' ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Rejected = $result['num_Rejected'];
+?>
+<script>
+    var num_new = <?php echo $num_new; ?>;
+    var num_Approve = <?php echo $num_Approve; ?>;
+    var num_Hold = <?php echo $num_Hold; ?>;
+    var num_Rejected = <?php echo $num_Rejected; ?>;
+
+    var options = {
+        series: [num_new, num_Approve, num_Hold, num_Rejected],
+        chart: {
+            width: 380,
+            type: 'pie',
+        },
+        labels: ['New', 'Approve', 'Hold', 'Rejected'],
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chartpie"), options);
+    chart.render();
+</script>
+<?php
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_new FROM requirements JOIN users ON users.id = requirements.userId WHERE requirements.status IS NULL ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_new = $result['num_new'];
+
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Approve FROM requirements JOIN users ON users.id = requirements.userId WHERE requirements.status='Approved' ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Approve = $result['num_Approve'];
+
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Hold FROM requirements JOIN users ON users.id = requirements.userId WHERE requirements.status='Hold' ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Hold = $result['num_Hold'];
+
+    $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_Rejected FROM requirements JOIN users ON users.id = requirements.userId WHERE requirements.status='Rejected' ");
+    $result = mysqli_fetch_assoc($rt);
+    $num_Rejected = $result['num_Rejected'];
+?>
+<script>
+    var num_new = <?php echo $num_new; ?>;
+    var num_Approve = <?php echo $num_Approve; ?>;
+    var num_Hold = <?php echo $num_Hold; ?>;
+    var num_Rejected = <?php echo $num_Rejected; ?>;
+
+    var options = {
+        series: [num_new, num_Approve, num_Hold, num_Rejected],
+        chart: {
+            width: 380,
+            type: 'pie',
+        },
+        labels: ['New', 'Approve', 'Hold', 'Rejected'],
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chartpie1"), options);
+    chart.render();
+</script>
 </body>
 </html>
 <?php } ?>

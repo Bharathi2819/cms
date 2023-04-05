@@ -310,31 +310,43 @@ if ($_SESSION['role'] != 'admin') {
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script>
     <?php
-       $today = date("Y-m-d");
-       $last_week = date("Y-m-d", strtotime("-7 days"));
-       
-       $rt_fund = mysqli_query($conn, "SELECT COUNT(*) AS num_new FROM fund JOIN users ON users.id = fund.userId WHERE fund.status IS NULL AND fund.departmentcode = '" . $_SESSION['departmentcode'] . "' AND  users.role != 'admin' AND fund.regDate BETWEEN '" . $last_week . "' AND '" . $today . "'");
-       $result_fund = mysqli_fetch_assoc($rt_fund);
-       $num_new_fund = $result_fund['num_new'];
-       
-       $rt_material = mysqli_query($conn, "SELECT COUNT(*) AS num_new FROM requirements JOIN users ON users.id = requirements.userId WHERE requirements.status IS NULL AND requirements.departmentcode = '" . $_SESSION['departmentcode'] . "' AND users.role != 'admin' AND requirements.regDate BETWEEN '" . $last_week . "' AND '" . $today . "'");
-       $result_material = mysqli_fetch_assoc($rt_material);
-       $num_new_material = $result_material['num_new'];
-       
-    ?>
+    $today = date("Y-m-d");
+    $last_week = date("Y-m-d", strtotime("-7 days"));
+    $start_timestamp = strtotime($last_week." 00:00:00");
+    $end_timestamp = strtotime($today . " 23:59:59");
 
+    $days = array();
+    $Material = array();
+    $Fund = array();
+    
+
+    for ($i = 0; $i < 7; $i++) {
+        $day_timestamp = strtotime("-$i days");
+        $day = date("Y-m-d", $day_timestamp);
+        $days[] = $day;
+
+        $rt = mysqli_query($conn, "SELECT COUNT(*) AS Material FROM requirements WHERE DATE(requirements.regDate) = '$day'");
+        $result = mysqli_fetch_assoc($rt);
+        $Material[] = $result['Material'];
+
+        $rt = mysqli_query($conn, "SELECT COUNT(*) AS Fund FROM fund WHERE DATE(fund.regDate) = '$day'");
+        $result = mysqli_fetch_assoc($rt);
+        $Fund[] = $result['Fund'];
+
+    }
+?>
+<script>
     var chart = document.querySelector('#chartline')
     var options = {
         series: [{
             name: 'Material',
             type: 'area',
-            data: [44, 55, 31, 47, 31,<?php echo $num_new_material ?>, <?php echo $num_new_material ?>]
+            data: <?php echo json_encode($Material); ?>
         }, {
             name: 'Fund',
             type: 'line',
-            data: [<?php echo $num_new_fund ?>, <?php echo $num_new_fund ?>, <?php echo $num_new_fund ?>,<?php echo $num_new_fund ?>, <?php echo $num_new_fund ?>, <?php echo $num_new_fund ?>, <?php echo $num_new_fund ?>]
+            data: <?php echo json_encode($Fund); ?>
         }],
         chart: {
             height: 350,
@@ -354,25 +366,20 @@ if ($_SESSION['role'] != 'admin') {
         markers: {
             size: 0
         },
-        yaxis: [{
-            title: {
-                text: '',
-            },
+        xaxis: {
+            categories: <?php echo json_encode($days); ?>
         },
-        {
-            opposite: true,
-            title: {
-                text: '',
-            },
+        yaxis:{
+            min:0,
+            max:100
         },
-        ],
         tooltip: {
             shared: true,
             intersect: false,
             y: {
                 formatter: function(y) {
                     if (typeof y !== "undefined") {
-                        return y.toFixed(0) + " points";
+                        return y.toFixed(0) + "";
                     }
                     return y;
                 }
@@ -381,7 +388,7 @@ if ($_SESSION['role'] != 'admin') {
     };
     var chart = new ApexCharts(chart, options);
     chart.render();
-</script>
+</script> 
 <script>
 <?php
     $rt = mysqli_query($conn, "SELECT COUNT(*) AS num_new FROM fund JOIN users ON users.id = fund.userId WHERE fund.status IS NULL AND fund.departmentcode = '" . $_SESSION['departmentcode'] . "' AND users.role != 'admin'");
