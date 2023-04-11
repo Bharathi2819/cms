@@ -62,9 +62,9 @@ header('location:index.php');
             include('./include/sidebar.php');
             ?>
             <div class="h-full  mb-50 ml-64 mt-20 md:ml-64 md:px-20 xl:px-12 " style="padding-left: 150px;padding-right: 150px;">
-                <div class="h-2 bg-sky-400 rounded-t-md"></div>
+                <div class="h-2 bg-pink-500 rounded-t-md"></div>
                 <form class="min-w-full p-20 pl-100  bg-white rounded-lg shadow-xl " name="updateticket" id="updateticket" method="post"action="" >
-                    <h1 class="mb-10 font-sans text-2xl font-bold text-center uppercase text-sky-600 ">User Profile</h1>
+                    <h1 class="mb-10 font-sans text-2xl font-bold text-center uppercase text-sky-800 ">User Profile</h1>
                     <?php
                       $ret1=mysqli_query($conn,"select * FROM users where id='".$_GET['uid']."'");
                       while($row=mysqli_fetch_array($ret1))
@@ -191,7 +191,6 @@ header('location:index.php');
 </div>
 </div>
  </div>
-
     <?php } ?>
  </form>
 </div>

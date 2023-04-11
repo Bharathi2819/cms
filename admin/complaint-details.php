@@ -14,11 +14,11 @@ else
 <body>
     <div class="flex flex-col flex-auto flex-shrink-0 min-h-screen antialiased text-black bg-zinc-100 " >
         <div class="h-full  mb-10 ml-64 mt-14 md:ml-64 md:px-40 xl:px-40" style="padding-left: 248px;padding-right: 240px;">
-            <div class="h-2 bg-sky-400 rounded-t-md"></div>
+            <div class="h-2 bg-pink-400 rounded-t-md"></div>
                 <form class="min-w-full p-10 pl-10  bg-white rounded-lg shadow-xl xl:px-10" method="post" action="">
                     <h1 class="mb-6 font-sans text-2xl font-bold text-center text-gray-600">Complaint Details</h1>
-					<?php $st='closed';
-                        $query=mysqli_query($conn,"select tblcomplaints.*,users.fullName as name,category.categoryName as catname from tblcomplaints join users on users.id=tblcomplaints.userId join category on category.id=tblcomplaints.category where tblcomplaints.complaintNumber='".$_GET['cid']."'");
+					<?php 
+                        $query=mysqli_query($conn,"select tblcomplaints.*,users.fullName as name from tblcomplaints join users on users.id=tblcomplaints.userId where tblcomplaints.complaintNumber='".$_GET['cid']."'");
                         while($row=mysqli_fetch_array($query))
                         {
                     ?>
@@ -41,18 +41,6 @@ else
                             	<p><?php echo htmlentities($row['regDate']);?></p>
                         	</div>
                         </div>
-						<div>
-                            <label class="block my-3 font-semibold text-gray-800 text-md" for="category">Category </label>
-                            <div class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none">
-								<p><?php echo htmlentities($row['catname']);?></p>
-          		        	</div>
-                        </div>
-                        <div>
-                            <label for="subcategory" class="block my-3 font-semibold text-gray-800 text-md">SubCategory</label>
-                            <div class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none">
-							<p><?php echo htmlentities($row['subcategory']);?></p>
-                        	</div>
-                        </div>
                         <div>
                             <label for="complaintype" class="block my-3 font-semibold text-gray-800 text-md">Complaint Type</label>
                             <div class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none">
@@ -70,12 +58,6 @@ else
 							<div class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none">
 							<p><?php echo htmlentities($row['departmentcode']);?></p>
                         	</div>
-                        </div>
-                        <div>
-                            <label class="block my-3 font-semibold text-gray-800 text-md">Asset Complaint </label>
-                            <div class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none">
-                                <p><?php echo htmlentities($row['complainasset']);?></p>
-                            </div>
                         </div>
                     </div>
                     <div class="box-border mt-10 h-32 w-full p-4 border-4 rounded-lg">
@@ -129,7 +111,7 @@ else
                         </div>
                     </div>
                     <div class="box-border mt-10 h-20 w-full p-4 border-4 rounded-lg">
-                        <div class="grid content-center box-border  bg-sky-200  h-12 w-full p-4 border-1 rounded-lg" >
+                        <div class="grid content-center box-border  bg-pink-200  h-12 w-full p-4 border-1 rounded-lg" >
                             <label class="flex font-semibold w-full text-gray-800 text-md text-center ">Final Status
                                <div class="w-40 ml-5  py-1 rounded-lg bg-zinc-100 focus:outline-none">
                                     <p> <?php if($row['status']=="")
@@ -151,10 +133,10 @@ else
                         <p><?php if($row['status']=="closed"){
                             } else {?>
                             <a href="updatecomplaint.php?cid=<?php echo htmlentities($row['complaintNumber']);?>" title="Update order">
-                                <button type="button" class="inline-flex items-center px-4 py-2 mr-3 text-base  text-white bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-300 dark:focus:ring-sky-800 font-medium rounded-lg text-center">Take Action</button></td>
+                                <button type="button" class="inline-flex items-center px-4 py-2 mr-3 text-base  text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-center">Take Action</button></td>
                             </a><?php } ?>
                             <a href="userprofile.php?uid=<?php echo htmlentities($row['userId']);?>" title="Update order">
-                                <button type="button" class="inline-flex items-center px-4 py-2 mr-3 text-base  text-white bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-300 dark:focus:ring-sky-800 font-medium rounded-lg text-center">View User Detials</button></a></td>
+                                <button type="button" class="inline-flex items-center px-4 py-2 mr-3 text-base  text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-center">View User Detials</button></a></td>
                             <?php  } ?>
                         </p>
                     </div>

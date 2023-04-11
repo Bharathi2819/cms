@@ -60,11 +60,11 @@ $_SESSION['msg']="Old Password not match !!";
     <body>
         
             <div class="h-full  mb-10 ml-64 mt-20 md:ml-64 md:px-20 xl:px-12 " style="padding-left: 600px;padding-right: 600px;margin-top:100px;">
-                <div class="h-2 bg-sky-400 rounded-t-md"></div>
+                <div class="h-2 bg-pink-500 rounded-t-md"></div>
                     <form class="min-w-full p-10 pl-10  bg-white rounded-lg shadow-xl xl:px-10" method="post" name="chngpwd" onSubmit="return valid();">
-                        <h1 class="mb-6 font-sans text-2xl font-bold text-center uppercase text-gray-600"> Change Password</h1>
+                        <h1 class="mb-6 font-sans text-2xl font-bold text-center uppercase text-sky-800"> Change Password</h1>
                             <div>
-                                <label class="block mt-10 my-3 font-semibold text-gray-600 text-xl" for="basicinput">Current Password</label>
+                                <label class="block mt-10 my-3 font-semibold  text-sky-800 text-xl" for="basicinput">Current Password</label>
                                 <div class="py-2" x-data="{ show: true }">
                                     <div class="relative">
                                     <input type="password"  name="password" placeholder="Enter your current password" :type="show ? 'password' : 'text'" class="text-md block px-3 py-2 rounded-lg w-full 
@@ -74,14 +74,14 @@ $_SESSION['msg']="Old Password not match !!";
                                     focus:border-gray-600  
                                     focus:outline-none" required/>
                                     <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                                        <svg class="h-6 text-sky-500" fill="none" @click="show = !show"
+                                        <svg class="h-6 text-pink-500" fill="none" @click="show = !show"
                                         :class="{'hidden': !show, 'block':show }" xmlns="http://www.w3.org/2000/svg"
                                         viewbox="0 0 576 512">
                                         <path fill="currentColor"
                                             d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
                                         </path>
                                         </svg>
-                                        <svg class="h-6 text-sky-500" fill="none" @click="show = !show"
+                                        <svg class="h-6 text-pink-500" fill="none" @click="show = !show"
                                         :class="{'block': !show, 'hidden':show }" xmlns="http://www.w3.org/2000/svg"
                                         viewbox="0 0 640 512">
                                         <path fill="currentColor"
@@ -93,7 +93,7 @@ $_SESSION['msg']="Old Password not match !!";
                                 </div>
                             </div>
                             <div  class="block mt-8" >
-                                <label class="block mt-3 my-3 font-semibold text-gray-600 text-xl" for="basicinput">New Password</label>
+                                <label class="block mt-3 my-3 font-semibold  text-sky-800 text-xl" for="basicinput">New Password</label>
                                 <div class="py-2" x-data="{ show: true }">
                                     <div class="relative">
                                     <input type="password" placeholder="Enter your new password"  name="newpassword" :type="show ? 'password' : 'text'" class="text-md block px-3 py-2 rounded-lg w-full 
@@ -103,14 +103,14 @@ $_SESSION['msg']="Old Password not match !!";
                                     focus:border-gray-600  
                                     focus:outline-none" required/>
                                     <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                                        <svg class="h-6 text-sky-500" fill="none" @click="show = !show"
+                                        <svg class="h-6 text-pink-500" fill="none" @click="show = !show"
                                         :class="{'hidden': !show, 'block':show }" xmlns="http://www.w3.org/2000/svg"
                                         viewbox="0 0 576 512">
                                         <path fill="currentColor"
                                             d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
                                         </path>
                                         </svg>
-                                        <svg class="h-6 text-sky-500" fill="none" @click="show = !show"
+                                        <svg class="h-6 text-pink-500" fill="none" @click="show = !show"
                                         :class="{'block': !show, 'hidden':show }" xmlns="http://www.w3.org/2000/svg"
                                         viewbox="0 0 640 512">
                                         <path fill="currentColor"
@@ -122,7 +122,7 @@ $_SESSION['msg']="Old Password not match !!";
                                 </div>
                             </div>
                             <div  class="block mt-8" >
-                                <label class="block mt-3 my-3 font-semibold text-gray-600 text-xl" for="basicinput">Retype Password</label>
+                                <label class="block mt-3 my-3 font-semibold  text-sky-800 text-xl" for="basicinput">Retype Password</label>
                                 <div class="py-2" x-data="{ show: true }">
                                     <div class="relative">
                                     <input type="password" placeholder="Enter your new Password again"  name="confirmpassword" :type="show ? 'password' : 'text'" class="text-md block px-3 py-2 rounded-lg w-full 
@@ -132,14 +132,14 @@ $_SESSION['msg']="Old Password not match !!";
                                     focus:border-gray-600  
                                     focus:outline-none" required/>
                                     <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                                        <svg class="h-6 text-sky-500" fill="none" @click="show = !show"
+                                        <svg class="h-6 text-pink-500" fill="none" @click="show = !show"
                                         :class="{'hidden': !show, 'block':show }" xmlns="http://www.w3.org/2000/svg"
                                         viewbox="0 0 576 512">
                                         <path fill="currentColor"
                                             d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
                                         </path>
                                         </svg>
-                                        <svg class="h-6 text-sky-500" fill="none" @click="show = !show"
+                                        <svg class="h-6 text-pink-500" fill="none" @click="show = !show"
                                         :class="{'block': !show, 'hidden':show }" xmlns="http://www.w3.org/2000/svg"
                                         viewbox="0 0 640 512">
                                         <path fill="currentColor"
@@ -152,7 +152,7 @@ $_SESSION['msg']="Old Password not match !!";
                             </div>
                             <div class="grid place-items-center">
                                 <div>
-                                    <button type="submit" name="submit" class="px-10 py-3 mt-8 mb-3 font-sans text-xl font-semibold tracking-wide text-white bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-300 dark:focus:ring-sky-800 hover:bg-sky-800 rounded-lg">Update</button>
+                                    <button type="submit" name="submit" class="px-10 py-3 mt-8 mb-3 font-sans text-xl font-semibold tracking-wide text-white bg-gradient-to-r from-pink-500 via-pink-500 to-pink-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-500 dark:focus:ring-pink-500 hover:bg-pink-500 rounded-lg">Update</button>
                                 </div>
                             </div>
                     </form>

@@ -18,7 +18,6 @@ if ($_SESSION['role'] != 'admin') {
     exit();
 }
 ?>
-
     <div>
         <nav class="fixed z-50 w-full bg-gray-800 border-b border-gray-200">
             <div class="px-3 py-3 lg:px-5 lg:pl-3">
@@ -51,7 +50,7 @@ if ($_SESSION['role'] != 'admin') {
 
                         </button>
 
-                        <a href="logout.php" class="hidden sm:inline-flex ml-5 text-white bg-purple-500 hover:bg-purple-600 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3">
+                        <a href="logout.php" class="hidden sm:inline-flex ml-5 text-white bg-pink-500 hover:bg-pink-500 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3">
                             <svg class="w-8 h-8 mr-2 -ml-1 text-white svg-inline--fa fa-gem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -69,7 +68,7 @@ if ($_SESSION['role'] != 'admin') {
         </nav>
         <div class="flex pt-16 overflow-hidden bg-gray-800">
             <aside id="sidebar" class="fixed top-0 left-0 z-20  flex-col flex-shrink-0 hidden w-64 h-full pt-16 duration-75 lg:flex transition-width" aria-label="Sidebar">
-                <div class="relative flex flex-col flex-1 min-h-0 pt-0 border-r border-gray-200 bg-purple-500">
+                <div class="relative flex flex-col flex-1 min-h-0 pt-0 border-r border-gray-200 bg-pink-500">
                     <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
                         <div class="flex-1 px-3 space-y-1 bg-gray-800 divide-y">
                             <ul class="pb-2 space-y-2">
@@ -88,7 +87,7 @@ if ($_SESSION['role'] != 'admin') {
                                     </form>
                                 </li>
                                 <!-- <li>
-                                    <a href="branchmaster.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group">
+                                    <a href="branchmaster.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group">
                                         <svg class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                                             <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
@@ -98,7 +97,7 @@ if ($_SESSION['role'] != 'admin') {
                                 </li> -->
 
                                 <li>
-                                    <a href="tdashboard.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="tdashboard.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
                                         </svg>
@@ -106,7 +105,7 @@ if ($_SESSION['role'] != 'admin') {
                                     </a>
                                 </li>
                                 <!-- <li>
-                                    <a href="crequest.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="crequest.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
                                         </svg>
@@ -114,7 +113,7 @@ if ($_SESSION['role'] != 'admin') {
                                     </a>
                                 </li> -->
                                 <!-- <li>
-                                    <a href="crequest.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="crequest.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
                                         </svg>
@@ -122,7 +121,7 @@ if ($_SESSION['role'] != 'admin') {
                                     </a>
                                 </li> -->
                                 <li>
-                                    <a href="tregister-complaint.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="tregister-complaint.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
                                         </svg>
@@ -130,7 +129,7 @@ if ($_SESSION['role'] != 'admin') {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="tcomplaint-history.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="tcomplaint-history.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
                                         </svg>
@@ -138,7 +137,7 @@ if ($_SESSION['role'] != 'admin') {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="trequirements.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="trequirements.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
                                         </svg>
@@ -146,7 +145,7 @@ if ($_SESSION['role'] != 'admin') {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="trequirements.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="trequirements.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
                                         </svg>
@@ -155,7 +154,7 @@ if ($_SESSION['role'] != 'admin') {
                                 </li>
 
                                 <li>
-                                    <a href="trequirements-history.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="trequirements-history.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
                                             </path>
@@ -165,7 +164,7 @@ if ($_SESSION['role'] != 'admin') {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="tfund-history.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="tfund-history.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
                                             </path>
@@ -176,7 +175,7 @@ if ($_SESSION['role'] != 'admin') {
                                 </li>
 
                                 <!-- <li>
-                                    <a href="assetinward.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="assetinward.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
                                         </svg>
@@ -185,7 +184,7 @@ if ($_SESSION['role'] != 'admin') {
                                 </li>
                                
                                 <li>
-                                    <a href="inward-outwardreport.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                    <a href="inward-outwardreport.php" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
                                         </svg>
@@ -195,7 +194,7 @@ if ($_SESSION['role'] != 'admin') {
 
                                 <!-- <li>
                                     <a href="#"
-                                        class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-purple-500 group ">
+                                        class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-pink-500 group ">
                                         <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white"
                                             fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd"
@@ -207,40 +206,40 @@ if ($_SESSION['role'] != 'admin') {
                                 </li> -->
                            
                                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                                    <button type="button" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg group hover:bg-purple-500 dark:text-white dark:hover:bg-purple-500" aria-controls="dropdown-example3" data-collapse-toggle="dropdown-example3">
+                                    <button type="button" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg group hover:bg-pink-500 dark:text-white dark:hover:bg-pink-500" aria-controls="dropdown-example3" data-collapse-toggle="dropdown-example3">
                                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
                                         <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Requirement Request</span>
                                         <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                     </button>
                                     <ul id="dropdown-example3" class="hidden py-2 space-y-2">
                                         <li>
-                                            <a href="tNew-Requirements.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-purple-500 dark:text-white dark:hover:bg-purple-500">New Requirements</a>
+                                            <a href="tNew-Requirements.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-pink-500 dark:text-white dark:hover:bg-pink-500">New Requirements</a>
                                         </li>
                                         <li>
-                                            <a href="tApproved-Requirement.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-purple-500 dark:text-white dark:hover:bg-purple-500">Approved Requirement</a>
+                                            <a href="tApproved-Requirement.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-pink-500 dark:text-white dark:hover:bg-pink-500">Approved Requirement</a>
                                         </li>
                                         <li>
-                                            <a href="tHolded-Requirement.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-purple-500 dark:text-white dark:hover:bg-purple-500">Hold Requirement</a>
+                                            <a href="tHolded-Requirement.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-pink-500 dark:text-white dark:hover:bg-pink-500">Hold Requirement</a>
                                         </li>
                                         <li>
-                                            <a href="tRejected-Requirement.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-purple-500 dark:text-white dark:hover:bg-purple-500">Rejected Requirement</a>
+                                            <a href="tRejected-Requirement.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-pink-500 dark:text-white dark:hover:bg-pink-500">Rejected Requirement</a>
                                         </li>
                                     </ul>
                                 </div>
                                 </ul>
                             <div class="pt-2 space-y-2">
                                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                                    <button type="button" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg group hover:bg-purple-500 dark:text-white dark:hover:bg-purple-500" aria-controls="dropdown-example2" data-collapse-toggle="dropdown-example2">
+                                    <button type="button" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg group hover:bg-pink-500 dark:text-white dark:hover:bg-pink-500" aria-controls="dropdown-example2" data-collapse-toggle="dropdown-example2">
                                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
                                         <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Account Settings</span>
                                         <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                     </button>
                                     <ul id="dropdown-example2" class="hidden py-2 space-y-2">
                                         <li>
-                                            <a href="tprofile.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-purple-500 dark:text-white dark:hover:bg-purple-500">Profile</a>
+                                            <a href="tprofile.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-pink-500 dark:text-white dark:hover:bg-pink-500">Profile</a>
                                         </li>
                                         <li>
-                                            <a href="tchangepassword.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-purple-500 dark:text-white dark:hover:bg-purple-500">Change Password</a>
+                                            <a href="tchangepassword.php" class="flex items-center w-full p-2 text-base font-normal text-white transition duration-75 rounded-lg pl-11 group hover:bg-pink-500 dark:text-white dark:hover:bg-pink-500">Change Password</a>
                                         </li>
                                     </ul>
                         </div>

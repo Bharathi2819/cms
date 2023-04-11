@@ -1,6 +1,6 @@
 <?php
 
-$dbcon = mysqli_connect("localhost", "root", "", "test1");
+$dbcon = mysqli_connect("localhost", "root", "", "athul9z1_cms");
 
 if(!empty($_POST["stateName"])) 
 {

@@ -28,7 +28,7 @@ if ($_SESSION['role'] != 'user') {
                                         href="#">
                                         <div class="p-5">
                                             <div class="flex gap-6 ">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-amber-400"
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 "
                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -97,14 +97,14 @@ if ($_SESSION['role'] != 'user') {
                                         href="#">
                                         <div class="p-5">
                                             <div class="flex gap-6 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="amber" d="M12.925 11.05L8.675 6.8L10.1 5.4l2.825 2.825l5.675-5.65l1.4 1.4l-7.075 7.075ZM14 22.5l-7-1.95V11h1.95l6.2 2.3q.825.3 1.337 1.05T17 16h-2q-1.05 0-1.65-.075T12.3 15.7l-2-.65l-.3.95l1.575.575q.7.275 1.275.35T14.2 17H19q1.65 0 2.325.537T22 19v1l-8 2.5ZM1 22V11h4v11H1Z"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.75 1.75h4.5v3.5h-4.5zm4 11.05l1.5 1.5l3-2.5m-9-9h-2.5v11.5h4.5m6-5V2.8h-2.5"/></svg>
                                                 <div
                                                     class="h-6 flex justify-items-starttext-white font-semibold text-base uppercase">
                                                     <span class="flex ">Approved Requirements</span>
                                                 </div>
                                             </div>
                                             <div class="flex gap-6 ">
-                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300"">
+                                                <div class="box-border mt-5 h-25 w-40 p-4 border-1 rounded-lg bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-300">
                                                     <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
                                                         <div>
                                                             <div>
@@ -375,14 +375,13 @@ if ($_SESSION['role'] != 'user') {
 
                             <div class="col-span-12 mt-5">
                                 <div class="grid gap-2 grid-cols-1 lg:grid-cols-2">
-                                    <div class="bg-white rounded-lg border-2 border-gray-2
-                                    00 shadow-lg p-4" id="chartline"></div>
+                                    <div class= "border--200 rounded-lg bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-300  shadow-lg p-4" id="chartline"></div>
                                     <div class="grid gap-2 grid-cols-1 lg:grid-cols-2">
-                                    <div class="text-white border-2 border-amber-200 rounded-lg bg-gradient-to-r from-amber-100 via-amber-200 to-amber-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-amber-200 dark:focus:ring-amber-300" id="chartpie">
-                                    <div class="mt-7 flex justify-center text-black font-semibold text-base uppercase mb-8">Material</div>   
+                                    <div class="text-white border-2 font-bold border-pink-500 rounded-lg bg-gradient-to-r from-pink-500 via-pink-200 to-pink-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-500" id="chartpie">
+                                    <div class="mt-7 flex justify-center text-sky-800 font-bold text-xl uppercase mb-8">Material</div>   
                                     </div>
-                                    <div class="text-white border-2 border-amber-200 rounded-lg bg-gradient-to-r from-amber-100 via-amber-200 to-amber-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-amber-200 dark:focus:ring-amber-300" id="chartpie1">
-                                    <div class="mt-7 flex justify-center text-black font-semibold text-base uppercase mb-8">Fund</div>  
+                                    <div class="text-white border-2 font-bold border-sky-500 rounded-lg bg-gradient-to-r from-sky-500 via-sky-200 to-sky-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-500" id="chartpie1">
+                                    <div class="mt-7 flex justify-center text-pink-500 font-bold text-xl uppercase mb-8">Fund</div>  
                                     </div></div>
                                 </div>
                                 </div>

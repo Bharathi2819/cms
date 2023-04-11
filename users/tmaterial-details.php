@@ -12,7 +12,7 @@
 ?>
 <body>
     <div class="h-full  mb-10 ml-64 mt-14 md:ml-64 md:px-40 xl:px-40" style="padding-left: 248px;padding-right: 240px;">
-            <div class="h-2 bg-purple-400 rounded-t-md"></div>
+            <div class="h-2 bg-pink-500 rounded-t-md"></div>
                 <form class="min-w-full p-10 pl-10  bg-white rounded-lg shadow-xl xl:px-10" method="post" action="">
                     <h1 class="mb-6 font-sans text-2xl font-bold text-center text-gray-600">Requirement Details</h1>
                     <?php
@@ -125,9 +125,9 @@
                         </div>
                     </div>
                     <div class="box-border mt-10 h-20 w-full p-4 border-4 rounded-lg">
-                        <div class="grid content-center box-border  bg-purple-200  h-12 w-full p-4 border-1 rounded-lg" >
+                        <div class="grid content-center box-border  bg-pink-500  h-12 w-full p-4 border-1 rounded-lg" >
                             <label class="flex font-semibold w-full text-gray-800 text-md text-center ">Final Status
-                               <div class="w-40 ml-5  py-1 rounded-lg bg-zinc-100 text-purple-800 focus:outline-none">
+                               <div class="w-40 ml-5  py-1 rounded-lg bg-zinc-100 text-pink-500 focus:outline-none">
                                     <p> <?php if($row['status']=="")
 											{ echo "Not Process Yet";
                                             } else {
@@ -143,88 +143,14 @@
                         </div>
                     </div>
                     <div class="mt-10  flex justify-center ">
-                    <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="popup">
-                          <div class="flex items-center justify-center min-h-screen">
-                            <div class="relative rounded-lg shadow-lg bg-gradient-to-r from-purple-100 via-purple-200 to-purple-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-300 ">
-                            <!-- <img src="image.jpg" alt="" class="object-cover w-full h-full"> -->
-                            <div class="p-4">
-                                <h2 class="text-2xl font-medium  text-center mt-5 mb-8 text-bold">Take Action</h2>
-                                <form>
-                                  <?php
-                            if ($_SESSION['role'] != 'admin')
-                            {
-                            header('location:index.php');
-                            }
-                            else{
-                            if(isset($_POST['update']))
-                            {
-                        $requirementsnumber=$_GET['cid'];
-                        $status=$_POST['status'];
-                        $remark=$_POST['remark'];
-                        $query=mysqli_query($conn,"insert into reqremark(reqNumber,status,remark) values('$requirementsnumber','$status','$remark')");
-                        $sql=mysqli_query($conn,"update requirements set status='$status' where reqNumber='$requirementsnumber'");
-                          if($status == "closed")
-                          {
-                          $query1=mysqli_query($conn,"select *from requirements where reqNumber='".$_GET['cid']."'");
-                          while($row=mysqli_fetch_array($query1))
-                          {
-                        }
-                        echo "<script>alert('requirements details updated successfully');</script>";
-                          }
-                        }
-                        ?>
-                        <script language="javascript" type="text/javascript">
-                        function f2()
-                        {
-                        window.close();
-                        }ser
-                        function f3()
-                        {
-                        window.print(); 
-                        }
-                        </script>
-                        <div style="margin-left:50px;">
-                          <form name="updateticket" id="updatecomplaint" method="post"> 
-                          <table class="w-full table-auto min-w-max text-lg ">
-                                <tr>
-                                  <td class="px-6 py-3 text-start">requirements Number</td>
-                                  <td class="px-6 py-3 text-start"><?php echo htmlentities($_GET['cid']); ?></td>
-                                </tr>
-                                <tr>
-                                  <td class="px-6 py-3 text-start">Status</td>
-                                  <td class="px-6 py-3 text-start"><select name="status" class="px-7 py-4 w-full text-lg text-black bg-white rounded-lg border-2 border-purple-800 focus:ring-purple-500 focus:border-purple-500 " required="required">
-                                        <option value="">Select Status</option>
-                                        <option value="Approved">Approve</option>
-                                        <option value="Hold">Hold</option>
-                                        <option value="Rejected">Reject</option>
-                                        </select>
-                                  </td>
-                                  </tr>
-                                  <tr>
-                                  <td class="px-6 py-3 text-start">Remark</td>
-                                  <td class="px-6 py-3 text-start"><textarea name="remark" class=" mt-2 h-20 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border-2 border-purple-800 focus:ring-purple-800 focus:border-purple-500 " required="required"></textarea></td>
-                                  </tr>
-                            </table>
-                            <div class="grid place-items-center mt-7 mb-8">
-                            <div>
-                            <button type="submit" class="inline-flex items-center px-4 py-2 mr-3 text-base  text-white bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-center" name="update" value="Submit">UPDATE</button>
-                          </div>
-                          </div>
-                          </form>
-                        </div>
-                            <?php } ?>
-                                </form>
-                              </div>
-                              <button class="absolute top-1 right-1 mt-2 mr-2 text-red-500 hover:text-red-700" aria-label="Close" onclick="closePopup()">
-                              <svg class="w-6 h-6 text-red-500 fill-current" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M11.414 10l4.293-4.293a1 1 0 0 0-1.414-1.414L10 8.586 5.707 4.293a1 1 0 0 0-1.414 1.414L8.586 10l-4.293 4.293a1 1 0 1 0 1.414 1.414L10 11.414l4.293 4.293a1 1 0 0 0 1.414-1.414L11.414 10z"/>
-                              </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                    <div class="fixed z-0 inset-0 bg-gray-800 opacity-50 hidden" id="overlay"></div>
-                    <button class="inline-flex items-center px-4 py-2 mr-3 text-base  text-white bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-center" onclick="openPopup()">Take Action</button>
+                        <p><?php if($row['status']=="closed"){
+                            } else {?>
+                            <a href="ttakeaction2.php?cid=<?php echo htmlentities($row['reqNumber']);?>" title="Update order">
+                                <button type="button" class="inline-flex items-center px-4 py-2 mr-3 text-base  text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-center">Take Action</button></td>
+                            </a><?php } ?>
+                            <?php  } ?>
+                        </p>
+                    </div>
              </form> 
                  
             </div>
@@ -246,5 +172,4 @@ function closePopup() {
   document.getElementById('popup').classList.add('hidden');
 }
 </script>
-<?php } ?>
 <?php } ?>

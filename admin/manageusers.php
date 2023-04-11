@@ -25,12 +25,12 @@ if(isset($_GET['del']))
 
 ?>
 <body>
-            <div class="h-full  mb-50 ml-64 mt-20 md:ml-64 md:px-20 xl:px-12 " style="padding-left: 150px;padding-right: 150px;">
-                <div class="h-2 bg-sky-400 rounded-t-md"></div>
-                <form class="min-w-full p-20 pl-100  bg-white rounded-lg shadow-xl " method="post" action="" >
-                    <h1 class="mb-10 font-sans text-2xl font-bold text-center uppercase text-sky-600 ">Manage User</h1>
+            <div class="h-full  mb-50 ml-64 mt-20 md:ml-64 md:px-20 xl:px-12 ">
+                <div class="h-2 bg-pink-500 rounded-t-md"></div>
+                <form class="min-w-full p-20 pl-100 mb-10  bg-white rounded-lg shadow-xl " method="post" action="" >
+                    <h1 class="mb-10 font-sans text-2xl font-bold text-center uppercase text-sky-800 ">Manage User</h1>
                     <a href="useradd.php">
-  <button type="button" class="text-white bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-300 dark:focus:ring-sky-800 font-medium rounded-lg text-sm px-10 py-3 text-center mr-2 mb-2 ml-6">
+  <button type="button" class="text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-10 py-3 text-center mr-2 mb-2 ml-6">
     Add
   </button>
 </a>
@@ -52,7 +52,7 @@ if(isset($_GET['del']))
                             <div class="my-10 bg-white rounded shadow-md">
                                 <table class="w-full table-auto min-w-max">
                                     <thead>
-                                        <tr class="text-base leading-normal text-sky-600 uppercase bg-sky-200">
+                                        <tr class="text-base leading-normal text-white uppercase bg-sky-800">
                                             <th class="px-6 py-3 text-start">SNO</th>
 											<th class="px-6 py-3 text-start"> Name</th>
 											<th class="px-6 py-3 text-start">Email </th>
@@ -135,7 +135,7 @@ if(isset($_GET['del']))
                                     // Display the numbered page links
                                     for ($i = max(1, $current_page - 2); $i <= min($current_page + 2, $total_pages); $i++) {
                                         if ($i == $current_page) {
-                                            echo '<li><span class="inline-flex items-center px-4 py-2 mr-3 text-base text-white bg-gray-600 font-medium rounded-lg">' . $i . '</span></li>';
+                                            echo '<li><span class="inline-flex items-center px-4 py-2 mr-3 text-base text-white bg-pink-500 font-medium rounded-lg">' . $i . '</span></li>';
                                         } else {
                                             echo '<li><a href="?page=' . $i . '" class="inline-flex items-center px-4 py-2 mr-3 text-base text-gray-600 hover:text-gray-800 font-medium rounded-lg">' . $i . '</a></li>';
                                         }

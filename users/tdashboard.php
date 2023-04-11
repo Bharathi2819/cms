@@ -9,24 +9,15 @@ if ($_SESSION['role'] != 'admin') {
     exit();
 }
 ?>
-<body>
-<div class="flex flex-col flex-auto flex-shrink-0 min-h-screen antialiased text-black bg-gray-100">
+    <body>
+        <div class="flex flex-col flex-auto flex-shrink-0 min-h-screen antialiased text-black bg-gray-100 ">
             <div class="h-fixed mt-10 mb-20 bg-gray-100 ml-14 md:ml-64">
-                <div class="overflow-x-auto">
-                    <div class="flex items-center justify-center overflow-hidden font-sans bg-gray-100 ">
-                        <div class="w-full lg:w-6/6">
-           <main class="">
                 <div class="grid mb-4 pb-10 px-8 mx-4 rounded-3xl bg-gray-100 border-4 border-gray-100">
-
                     <div class="grid grid-cols-12 gap-6">
                         <div class="grid grid-cols-12 col-span-12 gap-6 xxl:col-span-9">
                             <div class="col-span-12 mt-8">
-                                <div class="flex items-center h-10 intro-y">
-                                    <h2 class="mr-5 text-lg font-medium truncate">Dashboard</h2>
-                                </div>
                                 <div class="grid grid-cols-12 gap-6 mt-5">
-                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
-                                        href="#">
+                                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"href="#">
                                         <div class="p-5">
                                             <div class="flex gap-6 ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-400"
@@ -289,26 +280,22 @@ if ($_SESSION['role'] != 'admin') {
                             </div>
                             <div class="col-span-12 mt-5">
                                 <div class="grid gap-2 grid-cols-1 lg:grid-cols-2">
-                                    <div class="bg-white rounded-lg border-2 border-gray-2
-                                    00 shadow-lg p-4" id="chartline"></div>
+                                    <div class="bg-white rounded-lg border-2 border-gray-200 shadow-lg p-4" id="chartline"></div>
                                     <div class="grid gap-2 grid-cols-1 lg:grid-cols-2">
-                                    <div class="text-white border-2 border-purple-200 rounded-lg bg-gradient-to-r from-purple-100 via-purple-200 to-purple-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-300" id="chartpie">
-                                    <div class="mt-7 flex justify-center text-black font-semibold text-base uppercase">Material</div>   
+                                    <div class="text-white border-2 border-sky-200 rounded-lg bg-gradient-to-r  bg-pink-400 hover:bg-gradient-to-br focus:ring-4  lg:mt-0" id="chartpie">
+                                        <div class="mt-7 flex justify-center text-black font-semibold text-base uppercase">Material</div>   
                                     </div>
-                                    <div class="text-white border-2 border-purple-200 rounded-lg bg-gradient-to-r from-purple-100 via-purple-200 to-purple-300 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-300" id="chartpie1">
-                                    <div class="mt-7 flex justify-center text-black font-semibold text-base uppercase">Fund</div>  
-                                    </div></div>
+                                    <div class="text-white border-2 border-sky-200 rounded-lg bg-gradient-to-r bg-sky-600  hover:bg-gradient-to-br focus:ring-4  lg:mt-0" id="chartpie1">
+                                        <div class="mt-7 flex justify-center text-black font-semibold text-base uppercase">Fund</div>  
+                                    </div>
+                                    </div>
                                 </div>
                                 </div>
-                            </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <?php
     $today = date("Y-m-d");

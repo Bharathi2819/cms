@@ -83,8 +83,8 @@ else{
 ?>
 <body>
         <div class="flex flex-col flex-auto flex-shrink-0 min-h-screen antialiased text-black bg-zinc-100 ">
-            <div class="h-full  mb-10 ml-64 mt-14 md:ml-64 md:px-20 xl:px-12" style="padding-left: 248px;padding-right: 240px;">
-                <div class="h-2 bg-purple-400 rounded-t-md"></div>
+            <div class="h-full  mb-10 ml-64 mt-14 md:ml-64 md:px-20 xl:px-12">
+                <div class="h-2 bg-pink-500 rounded-t-md"></div>
                 <?php if ($successmsg) { ?>
                   <div class="alert alert-success alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -99,15 +99,15 @@ else{
                   </div>
                 <?php } ?>
                 <form class="min-w-full p-10 pl-10  bg-white rounded-lg shadow-xl xl:px-10" method="post" action="" enctype="multipart/form-data">
-                    <h1 class="mb-6 font-sans text-2xl font-bold text-center text-gray-600">Requirement</h1>
+                    <h1 class="mb-6 font-sans text-2xl font-bold text-center text-sky-800 uppercase">Requirement</h1>
                     <div class="box-border mt-10 h-30 w-full p-4 border-4 rounded-lg">
-                    <div class="grid content-center box-border  bg-purple-400  h-10 w-full p-4 border-1 rounded-lg" >
-                        <label class="block font-semibold w-full text-gray-800 text-md uppercase " for="myCheck" >Related To 
+                    <div class="grid content-center box-border  bg-sky-700  h-10 w-full p-4 border-1 rounded-lg" >
+                        <label class="block font-semibold w-full text-white text-md uppercase " for="myCheck" >Related To 
                     </div>
                         <input type="radio"  class="  ml-4 font-semibold text-gray-800 text-md" value="Requirement"  onclick="document.location.href='trequirements.php'" > &nbsp;&nbsp;<span>Material</span> 
                         <input type="radio"  class="  mt-6 ml-10 font-semibold text-gray-800 text-md" value="Fund" onclick="document.location.href='tfund.php'" checked>&nbsp;&nbsp;<span>Fund</span>
                     </div>
-                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-2" >
+                    <div class="grid grid-cols-1 gap-4 xl:grid-cols-3" >
                         <div>
                             <label for="reqtype" class="block my-3 font-semibold text-gray-800 text-md">Fund Amount</label>
                             <input type="text" name="Amount"  class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none" required=""/>
@@ -130,14 +130,7 @@ else{
                         <div>
                             <label class="block my-3 font-semibold text-gray-800 text-md" for="email">Department</label>
                             <select type="text" name="department1" id="department1" onChange="getDep(this.value);" class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none">
-                        <option value="">Select Department</option>
-                            <?php
-                                $sql = mysqli_query($conn, "select stateName,state_id from state");
-                                while ($rw = mysqli_fetch_assoc($sql)) {
-                            ?>
-                        <option value="<?php echo htmlentities($rw['stateName']); ?>">
-                            <?php echo htmlentities($rw['stateName']); ?></option>
-                            <?php } ?>
+                            <option value="<?php echo $_SESSION['department']?>"><?php echo $_SESSION['department']?></option>
                     </select>
                         </div>
 
@@ -145,7 +138,8 @@ else{
                             <label class="block my-3 font-semibold text-gray-800 text-md" for="email">Department
                                 Code</label>
                                 <select type="text" class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none" id="state_id" name="state_id" onChange="getCat(this.value);">
-                            <option value="">Select Category</option>
+                                <option value="<?php echo $_SESSION['departmentcode']?>"><?php echo $_SESSION['departmentcode']?>
+                                </option>
                         </select>
                         </div>
 
@@ -195,12 +189,12 @@ else{
                             <div>
                                 <label for="branchcode"class="block w-full my-3 font-semibold text-gray-800 text-md">Requirement Related Doc(if any)</label>
                                 <span class="sr-only">Choose File</span>
-                                <input  type="file" name="reqfile" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-400 file:text-purple-50 " />
+                                <input  type="file" name="reqfile" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-pink-500 file:text-pink-50 " />
                             </div>
                         </div>
                         <div class="grid place-items-center">
                             <div>
-                                <button type="submit" name="submit"class="px-4 py-2 mt-6 mb-3 font-sans text-lg font-semibold tracking-wide text-white rounded-lg bg-purple-400 hover:bg-purple-500">Submit</button>
+                                <button type="submit" name="submit"class="px-4 py-2 mt-6 mb-3 font-sans text-lg font-semibold tracking-wide text-white rounded-lg bg-pink-500 hover:bg-pink-500">Submit</button>
                             </div>
                         </div>
                 </form>

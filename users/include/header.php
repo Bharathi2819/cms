@@ -219,4 +219,6 @@
         }
     }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.15/dist/tailwind.min.css" />
+  <script src="./tailwind.config.js"></script>
 </head>

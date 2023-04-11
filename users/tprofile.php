@@ -58,11 +58,11 @@ changeMonth: true,
 <body>
         <div>
         <div class="flex flex-col flex-auto flex-shrink-0 min-h-screen antialiased text-black bg-zinc-100 ">
-            <div class="h-full  mb-10 ml-64 mt-14 md:ml-64 md:px-20 xl:px-12" style="padding-left: 248px;padding-right: 240px;">
-                <div class="h-2 bg-purple-400 rounded-t-md"></div>
+            <div class="h-full  mb-10 ml-64 mt-14 md:ml-64 md:px-20 xl:px-12">
+                <div class="h-2 bg-pink-500 rounded-t-md"></div>
                     <form class=" h-100 p-14 bg-white rounded-lg " method="post" action="" >
-                         <h1 class="mb-6 font-sans text-2xl font-bold text-center text-gray-600 uppercase">profile Information</h1><h5><b>Last Updated at :</b>&nbsp;&nbsp;<?php echo htmlentities($row['updationDate']);?></h5>
-                        <div class="grid  grid-cols-1 gap-8 xl:grid-cols-2">
+                         <h1 class="mb-6 font-sans text-2xl font-bold text-center text-sky-800 uppercase">profile Information</h1><h5><b>Last Updated at :</b>&nbsp;&nbsp;<?php echo htmlentities($row['updationDate']);?></h5>
+                        <div class="grid  grid-cols-1 gap-8 xl:grid-cols-4">
                             <div>
                                 <label class="block my-3 font-semibold text-gray-800 text-md" for="username">Full Name</label>
                                 <input class="w-full px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none" type="text" name="fullName"  text-gray-600 value="<?php echo htmlentities($row['fullName']);?>" placeholder="User Name" required/>
@@ -93,7 +93,7 @@ changeMonth: true,
                                 <select type="text" name="department" class="w-full mt-2  px-4 py-2 rounded-lg bg-zinc-100 focus:outline-none" id="department" onChange="getDep(this.value);" required>
                                     <option value="">Select Category</option>
                                     <?php
-                                        $dbcon = mysqli_connect("localhost", "root", "", "test1");
+                                        $dbcon = mysqli_connect("localhost", "root", "", "athul9z1_cms");
                                         $sql = mysqli_query($dbcon, "select stateName,state_id from state");
                                         while ($rw = mysqli_fetch_assoc($sql)) {
                                         ?>
@@ -174,7 +174,7 @@ changeMonth: true,
                                         </div>
                                         <div class="grid place-items-center justify-center">
                                 <div>
-                                    <button type="submit" name="submit" class="px-4 py-2 mt-10 font-sans text-lg font-semibold tracking-wide text-white bg-purple-400 rounded-lg hover:bg-sky-800">Submit</button>
+                                    <button type="submit" name="submit" class="px-10 py-3 mt-8 mb-3 font-sans text-xl font-semibold tracking-wide text-white bg-gradient-to-r from-pink-500 via-pink-500 to-pink-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-500 dark:focus:ring-pink-500 hover:bg-pink-500 rounded-lg ">Submit</button>
                                 </div>
                             </div>
                     </form>

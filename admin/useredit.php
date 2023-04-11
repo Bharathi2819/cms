@@ -209,9 +209,9 @@ if(isset($_POST['submit'])) {
     <body>
     <div class="h-full  mb-50 ml-64 mt-20 md:ml-64 md:px-20 xl:px-12 " >
 		<div class=" bg-white rounded-xl shadow-lg z-10">
-                    <div class="h-2  bg-sky-400 rounded-t-md"></div>
+                    <div class="h-2  bg-pink-500 rounded-t-md"></div>
                     <form class="min-w-full p-10 bg-white rounded-xl shadow-xl xl:px-20" method="post" action="" >
-                     <h1 class="mb-6 font-sans text-2xl font-bold text-center text-gray-600 ">Edit User </h1>
+                     <h1 class="mb-6 font-sans text-2xl font-bold text-center text-sky-800 ">Edit User </h1>
                      
                      <?php
                       $ret1=mysqli_query($conn,"select * FROM users where id='".$_GET['uid']."'");
@@ -328,7 +328,7 @@ if(isset($_POST['submit'])) {
                                         </div>
                             <div class="grid place-items-center">
                                 <div>
-                                    <button type="submit" name="submit" class="px-10 py-3 mt-8 mb-3 font-sans text-xl font-semibold tracking-wide text-white bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-sky-300 dark:focus:ring-sky-800 hover:bg-sky-800 rounded-lg">Submit</button>
+                                    <button type="submit" name="submit" class="px-10 py-3 mt-8 mb-3 font-sans text-xl font-semibold tracking-wide text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br  focus:ring-pink-300 hover:bg-pink-800 rounded-lg">Submit</button>
                                 </div>
                             </div>
                     </form>
